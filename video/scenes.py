@@ -444,6 +444,75 @@ class AnyDistance(Timed):
         self.finish()
 
 
+class Minimum(Timed):
+    def construct(self):
+        title=strip_title('How few crossings can six moves take?')
+        self.add(title)
+
+        def at(n):
+            return -5.5+11*n/200
+
+        def scale():
+            axis=stroke(pos(at(0),-.10),pos(at(200),-.10),LINE,3)
+            marks=VGroup(*(stroke(pos(at(n),-.23),pos(at(n),.03),LINE,3)
+                           for n in range(0,201,10)))
+            return VGroup(axis,marks,words('0',at(0),-.56,22,MUTED),
+                          words('crossings',0,-.75,23,MUTED))
+
+        ruler=scale()
+        twist=VGroup(dot(pos(at(196),-.1),CORAL,.12),words('196',at(196),.54,40,CORAL,True),
+                     words('one twist',at(196),1.12,23,MUTED))
+        self.play(Create(ruler),FadeIn(twist),run_time=1.15)
+        self.cue('bands')
+        self.play(FadeOut(ruler),FadeOut(twist),Transform(title,strip_title('Six bands after cutting')),
+                  run_time=.54)
+        weights=[30,30,6,6,30,30]
+        xs=np.linspace(-4.85,4.85,6)
+        bundles=VGroup()
+        for x,w in zip(xs,weights):
+            offsets=(np.arange(w)-(w-1)/2)*.041
+            strands=VGroup(*(stroke(pos(x+t,-.53),pos(x+t+.13,.67),AQUA,1.5) for t in offsets))
+            bundles.add(VGroup(strands,words(w,x,-1.12,38,WHITE,True)))
+        self.play(LaggedStart(*(FadeIn(b,shift=pos(0,.15)) for b in bundles),lag_ratio=.18),
+                  run_time=1.65)
+        self.cue('glue')
+        total=words('30 + 30 + 6 + 6 + 30 + 30 = 132',0,-2.26,36,GOLD,True)
+        self.play(FadeIn(total),run_time=.55)
+        self.cue('glue',.27)
+        self.play(FadeOut(bundles),FadeOut(total),Transform(title,strip_title('Shift the boundary by 13 places')),
+                  run_time=.55)
+        xs=np.linspace(-4.65,4.65,6)
+        top=VGroup(*(words(j,x,.75,33,WHITE,True) for j,x in enumerate(xs)))
+        bot=VGroup(*(words(j+13,x,-.72,33,AQUA,True) for j,x in enumerate(xs)))
+        seams=VGroup(*(stroke(pos(x,.46),pos(x,-.42),LINE,3) for x in xs))
+        self.play(FadeIn(top),FadeIn(bot,shift=pos(.7,0)),
+                  LaggedStart(*(Create(s) for s in seams),lag_ratio=.16),run_time=1.25)
+        self.play(FadeIn(words('Boundary positions, read modulo 132',0,-1.68,24,MUTED)),
+                  run_time=.45)
+        self.cue('lower')
+        old=Group(*[m for m in self.mobjects if m is not title])
+        self.play(FadeOut(old),Transform(title,strip_title('Could a smaller diagram work?')),run_time=.55)
+        ruler=scale()
+        line=stroke(pos(at(0),-.1),pos(at(131),-.1),AQUA,8)
+        attained=VGroup(dot(pos(at(132),-.1),GOLD,.14),words('132',at(132),.55,44,GOLD,True))
+        self.play(Create(ruler),FadeIn(attained),run_time=.82)
+        self.cue('lower',.31)
+        self.play(Create(line),run_time=1.6)
+        self.play(FadeIn(words('0–131 crossings',-2.15,1.08,32,AQUA,True)),
+                  FadeIn(words('Every pair has a path of at most five moves.',0,-1.89,29,WHITE)),
+                  run_time=.75)
+        self.cue('result')
+        old=Group(*self.mobjects)
+        self.play(FadeOut(old),run_time=.45)
+        self.add(strip_title('Minimum crossings on the double torus'))
+        self.play(FadeIn(words('Five moves',-3.18,.92,34,MUTED)),
+                  FadeIn(words('40',-3.18,-.34,87,AQUA,True)),run_time=.7)
+        self.cue('result',.46)
+        self.play(FadeIn(words('Six moves',3.18,.92,34,MUTED)),
+                  FadeIn(words('132',3.18,-.34,87,GOLD,True)),run_time=.7)
+        self.finish()
+
+
 class Poster(Scene):
     def construct(self):
         self.camera.background_color=BG

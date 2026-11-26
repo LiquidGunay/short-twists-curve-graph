@@ -42,5 +42,12 @@
     ["grow", "With enough twists, fold a length-four geodesic into one of length six. Fold again and its length is ten."],
     ["seven", "Stop seven edges along that path. Any shortcut to that point would shorten the whole path. So those two vertices are exactly seven apart."],
     ["close", "The short-twist result answers a more precise question. For Mahanta's drawing, two turns suffice. With the right fourteen-crossing starting pair, one turn does it."]
+  ],
+  "Minimum": [
+    ["ask", "Now allow every pair on the double torus. Can two curves stay six moves apart with fewer than a hundred and ninety-six crossings?"],
+    ["bands", "Cut along the first curve. In this example, the second curve breaks into six bands of parallel arcs. Four bands have thirty strands each. The other two have six each."],
+    ["glue", "That makes a hundred and thirty-two crossings. Slide one boundary thirteen places and glue it to the other. The arcs join into one curve. Its distance from the first is exactly six."],
+    ["lower", "Could we take away one more crossing? We counted all the ways to glue the smaller diagrams. In every case, the curves could reach each other in at most five moves."],
+    ["result", "On the double torus, forty crossings suffice for distance five. For distance six, the least possible number is a hundred and thirty-two."]
   ]
 }

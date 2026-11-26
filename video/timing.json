@@ -1,7 +1,7 @@
 {
   "fps": 30,
   "sample_rate": 24000,
-  "frames": 6424,
+  "frames": 7815,
   "voice": "af_heart",
   "speed": 1.01,
   "scenes": {
@@ -224,6 +224,42 @@
           "start": 634,
           "end": 929,
           "text": "The short-twist result answers a more precise question. For Mahanta's drawing, two turns suffice. With the right fourteen-crossing starting pair, one turn does it."
+        }
+      ]
+    },
+    "Minimum": {
+      "start": 6424,
+      "frames": 1391,
+      "beats": [
+        {
+          "id": "ask",
+          "start": 6,
+          "end": 245,
+          "text": "Now allow every pair on the double torus. Can two curves stay six moves apart with fewer than a hundred and ninety-six crossings?"
+        },
+        {
+          "id": "bands",
+          "start": 245,
+          "end": 538,
+          "text": "Cut along the first curve. In this example, the second curve breaks into six bands of parallel arcs. Four bands have thirty strands each. The other two have six each."
+        },
+        {
+          "id": "glue",
+          "start": 538,
+          "end": 868,
+          "text": "That makes a hundred and thirty-two crossings. Slide one boundary thirteen places and glue it to the other. The arcs join into one curve. Its distance from the first is exactly six."
+        },
+        {
+          "id": "lower",
+          "start": 868,
+          "end": 1139,
+          "text": "Could we take away one more crossing? We counted all the ways to glue the smaller diagrams. In every case, the curves could reach each other in at most five moves."
+        },
+        {
+          "id": "result",
+          "start": 1139,
+          "end": 1391,
+          "text": "On the double torus, forty crossings suffice for distance five. For distance six, the least possible number is a hundred and thirty-two."
         }
       ]
     }

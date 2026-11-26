@@ -1,6 +1,8 @@
-# Short Dehn twists on the closed genus-two surface
+# How many crossings does distance six require?
 
-**How small can a pair of curves be if one twist takes it all the way to distance six?** Start with curves $a,b$ four moves apart in the curve graph of the double torus. Twist $a$ once about $b$, then measure the distance from $a$ to its image. The least possible number of starting crossings is **14**. An explicit pair attains it, and the two endpoints intersect **196** times. The proof and complete small-intersection census are in Theorem 4, page 7 of the paper. [Read the paper](paper/short-twists.pdf) · [LaTeX source](paper/short-twists.tex) · [Literature and priority notes](paper/literature-and-priority.md)
+**On the closed double torus, the minimum is 132 crossings at distance six and 40 crossings at distance five.** An explicit pair attains each value. A computer-assisted proof covers all smaller diagrams, including pairs with separating endpoints. Jin and Menasco's general intersection inequality had supplied lower bounds of 48 and 24, respectively. Two implementations check the global exclusion. Python and Lean reconstruct the extremal diagrams. The paper states the topological arguments and the scope of the formalization. [Minimum-intersection paper](paper/minimum-six.pdf) · [LaTeX](paper/minimum-six.tex) · [Reproduce the census](computations/minimum/) · [Prior intersection bounds](paper/minimum-six-literature.md)
+
+**What changes if one curve must be a twist of the other?** Start with curves $a,b$ four moves apart. Twist $a$ once about $b$, then measure the distance from $a$ to its image. The least starting intersection number giving distance six is **14**, producing **196** endpoint crossings. Mahanta had proved that her 12-crossing example reaches distance five in one turn. The sharp small-twist results and their relation to her conjectures appear in our first paper. [Short-twist paper](paper/short-twists.pdf) · [LaTeX](paper/short-twists.tex) · [Literature and priority](paper/literature-and-priority.md)
 
 [![Six moves on a double torus. A two-handled surface and the sharp 14-crossing threshold.](video/poster.jpg)](video/six-moves.mp4)
 
@@ -37,7 +39,7 @@ Here is the 14-crossing example. Number the intersections in order on $a$. Read 
 (1, -9, -3, -11, -5, -6, -7, -8, -2, -10, -4, 12, 13, 14)
 ~~~
 
-The minimum of 196 concerns endpoints obtained by twisting a distance-four pair. Higher powers already produce at least $2\cdot12^2=288$ intersections. Over **all** pairs at distance six on the closed genus-two surface, the bounds supported here are $48\le i_{\min}(2,6)\le196$. The lower bound is due to Jin and Menasco's intersection growth inequality. [Jin–Menasco, Theorem 1.3](https://arxiv.org/pdf/2008.09665v4#page=3)
+Higher twist powers produce at least $2\cdot12^2=288$ intersections for these distance-four inputs. One unrestricted extremal pair has six bands of widths $(30,30,6,6,30,30)$ and gluing shift 13. Its 132 crossings bound 126 squares and four hexagons. A second minimizer has widths $(29,30,7,7,30,29)$ and the same shift. Their absolute algebraic intersections are 96 and 48, so they represent different homeomorphism orbits. [Gluing diagram and coordinates](paper/minimum-six.pdf#page=4) · [Signed crossing words](computations/minimum/witnesses.json)
 
 ## Reproduce the checks
 
@@ -49,9 +51,10 @@ python computations/census_small_seeds.py 12 13
 python computations/generate_seeds.py
 python computations/certificates.py
 python computations/verify_distance_six.py --distance 7
+python computations/minimum/verify_witnesses.py --uniform-bound
 ~~~
 
-The first command checks the upper and lower distance bounds on the marked examples. The second enumerates all triangle pairings, widths and boundary gluings at the two small intersection counts. The last prints twist words for a pair at any requested nonnegative distance on the same surface. The audit directory contains run transcripts, all sixteen census representatives and the normal-coordinate witnesses. [Verification transcripts](computations/audit/)
+The first command checks the marked twist examples. The second enumerates the small starting intersection counts. The command with argument 7 prints twist words for any requested nonnegative distance. The final command reconstructs the 40- and 132-crossing examples and checks their exact distances with two choices of search bound. Instructions for reproducing the global minimum use a C++17 compiler and the released per-size counts. [Twist verification transcripts](computations/audit/) · [Unrestricted census](computations/minimum/)
 
 The Lean package pins Lean **4.8.0** and mathlib **v4.8.0**. From the repository root, run
 
@@ -64,6 +67,6 @@ Lean constructs the two marked essential embedded circles on a compact quotient 
 
 ## Inside the film
 
-The opening illustrates a legal disjoint move on a two-handled surface. Read the signed crossing order of the starting pair, then watch its strands wrap through the edges of a cut-open collar. A four-edge path folds into a six-edge route. An annular distance ruler shows why the large-power proof works and where it falls short for two turns. The film shows the finite search, the census and the crossing order of the 14-crossing witness. The final scene constructs distance seven by stopping along a longer geodesic.
+The opening illustrates a legal disjoint move on a two-handled surface. Read the signed crossing order of the starting pair, then watch its strands wrap through a cut-open collar. A four-edge path folds into a six-edge route. An annular distance ruler explains the large-power proof. After the 14-crossing twist example and a construction at distance seven, the final chapter shows the six bands, gluing shift, and exclusion of all crossing counts below 132.
 
 The video uses Manim Community for animation and the Kokoro-82M model with the stock English voice **af_heart** for narration. Spoken phrases set the animation and caption times. The selected subtitles are also available separately. [Film source and rendering instructions](video/) · [Manim Community](https://www.manim.community/) · [Kokoro model card](https://huggingface.co/hexgrad/Kokoro-82M) · [Kokoro ONNX](https://github.com/thewh1teagle/kokoro-onnx)

@@ -309,3 +309,70 @@ For Mahanta's drawing, two turns suffice.
 00:03:30,073 --> 00:03:33,378
 With the right fourteen-crossing starting pair,
 one turn does it.
+
+70
+00:03:34,333 --> 00:03:36,639
+Now allow every pair on the double torus.
+
+71
+00:03:36,809 --> 00:03:41,892
+Can two curves stay six moves apart with fewer
+than a hundred and ninety-six crossings?
+
+72
+00:03:42,300 --> 00:03:43,668
+Cut along the first curve.
+
+73
+00:03:43,838 --> 00:03:48,124
+In this example, the second curve breaks into six
+bands of parallel arcs.
+
+74
+00:03:48,294 --> 00:03:50,126
+Four bands have thirty strands each.
+
+75
+00:03:50,296 --> 00:03:51,669
+The other two have six each.
+
+76
+00:03:52,067 --> 00:03:54,422
+That makes a hundred and thirty-two crossings.
+
+77
+00:03:54,592 --> 00:03:58,017
+Slide one boundary thirteen places and glue it to
+the other.
+
+78
+00:03:58,187 --> 00:03:59,909
+The arcs join into one curve.
+
+79
+00:04:00,079 --> 00:04:02,652
+Its distance from the first is exactly six.
+
+80
+00:04:03,067 --> 00:04:04,760
+Could we take away one more crossing?
+
+81
+00:04:04,930 --> 00:04:07,806
+We counted all the ways to glue the smaller
+diagrams.
+
+82
+00:04:07,976 --> 00:04:11,686
+In every case, the curves could reach each other
+in at most five moves.
+
+83
+00:04:12,100 --> 00:04:15,736
+On the double torus, forty crossings suffice for
+distance five.
+
+84
+00:04:15,906 --> 00:04:19,765
+For distance six, the least possible number is a
+hundred and thirty-two.

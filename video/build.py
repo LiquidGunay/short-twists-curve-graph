@@ -18,6 +18,7 @@ CHAPTERS={
     'Opening':'Curves and moves','Collar':'One turn in a collar','Fold':'A six-edge route',
     'Bounds':'The annular lower bound','Search':'Excluding five moves',
     'Census':'Why fourteen is sharp','AnyDistance':'Seven and beyond',
+    'Minimum':'The unrestricted minimum',
 }
 
 

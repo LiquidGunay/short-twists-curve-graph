@@ -1,11 +1,11 @@
 Lean 4.8.0 | mathlib v4.8.0 (b5eba595428809e96f3ed113bc7ba776c5f801ac)
 Command run at the root of the pinned project: lake build
 
-ℹ [2/1333] Replayed CurveDistance
+ℹ [2/1334] Replayed CurveDistance
 info: .\.\.\proof\CurveDistance.lean:155:0: 'CurveDistance.fold_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: .\.\.\proof\CurveDistance.lean:156:0: 'CurveDistance.every_distance_of_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: .\.\.\proof\CurveDistance.lean:157:0: 'CurveDistance.finite_search_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [3/1333] Replayed FiniteDiagrams
+ℹ [3/1334] Replayed FiniteDiagrams
 info: .\.\.\proof\FiniteDiagrams.lean:270:0: 'FiniteDiagrams.thirteen_seed_faces' depends on axioms: [propext, Lean.ofReduceBool]
 info: .\.\.\proof\FiniteDiagrams.lean:271:0: 'FiniteDiagrams.thirteen_twist_distance_test' depends on axioms: [propext,
  Quot.sound,
@@ -17,36 +17,38 @@ info: .\.\.\proof\FiniteDiagrams.lean:272:0: 'FiniteDiagrams.fourteen_twist_dist
  Lean.ofReduceBool]
 info: .\.\.\proof\FiniteDiagrams.lean:273:0: 'FiniteDiagrams.nested_unit_distance_test' depends on axioms: [propext, Quot.sound, Classical.choice, Lean.ofReduceBool]
 info: .\.\.\proof\FiniteDiagrams.lean:300:0: 'FiniteDiagrams.small_seed_unit_tests' depends on axioms: [propext, Quot.sound, Classical.choice, Lean.ofReduceBool]
-ℹ [1159/1333] Replayed SmallCensus
+ℹ [1211/1334] Replayed SmallCensus
 info: .\.\.\proof\SmallCensus.lean:141:0: 'ShortTwists.Census.all_twelve' depends on axioms: [propext, Quot.sound, Classical.choice, Lean.ofReduceBool]
 info: .\.\.\proof\SmallCensus.lean:142:0: 'ShortTwists.Census.all_thirteen' depends on axioms: [propext, Quot.sound, Classical.choice, Lean.ofReduceBool]
-ℹ [1160/1333] Replayed CensusCoverage
+ℹ [1212/1334] Replayed CensusCoverage
 info: .\.\.\proof\CensusCoverage.lean:87:0: 'ShortTwists.Census.mem_widths' depends on axioms: [propext, Quot.sound, Classical.choice]
 info: .\.\.\proof\CensusCoverage.lean:88:0: 'ShortTwists.Census.pairings_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1322/1333] Replayed IsotopyGraph
+ℹ [1322/1334] Replayed IsotopyGraph
 info: .\.\.\proof\IsotopyGraph.lean:108:0: 'ShortTwists.push_exact' depends on axioms: [propext, Quot.sound, Classical.choice]
-ℹ [1323/1333] Replayed MarkedCylinder
+ℹ [1323/1334] Replayed MarkedCylinder
 info: .\.\.\proof\MarkedCylinder.lean:122:0: 'ShortTwists.Cylinder.twist_preserves_distance' depends on axioms: [propext, Quot.sound, Classical.choice]
-ℹ [1324/1333] Replayed CollarCrossings
+ℹ [1324/1334] Replayed CollarCrossings
 info: .\.\.\proof\CollarCrossings.lean:237:0: 'ShortTwists.Cylinder.surfaceCrossingEquiv' depends on axioms: [propext, Quot.sound, Classical.choice]
-ℹ [1325/1333] Replayed CrossingOrder
+ℹ [1325/1334] Replayed CrossingOrder
 info: .\.\.\proof\CrossingOrder.lean:109:0: 'ShortTwists.Cylinder.tick_is_geometric_height' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1326/1333] Replayed MarkedFamily
+ℹ [1326/1334] Replayed MarkedFamily
 info: .\.\.\proof\MarkedFamily.lean:225:0: 'ShortTwists.Cylinder.core_embedding' depends on axioms: [Quot.sound, propext, Classical.choice]
 info: .\.\.\proof\MarkedFamily.lean:226:0: 'ShortTwists.Cylinder.markedLoop_range' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: .\.\.\proof\MarkedFamily.lean:227:0: 'ShortTwists.Cylinder.offset_homotopy' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1327/1333] Replayed MarkedEmbeddings
+ℹ [1327/1334] Replayed MarkedEmbeddings
 info: .\.\.\proof\MarkedEmbeddings.lean:123:0: 'ShortTwists.Cylinder.markedLoop_closedEmbedding' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1328/1333] Replayed CircleLifts
+ℹ [1328/1334] Replayed CircleLifts
 info: .\.\.\proof\CircleLifts.lean:80:0: 'ShortTwists.realLiftable_of_null' depends on axioms: [Quot.sound, propext, Classical.choice]
-ℹ [1329/1333] Replayed EssentialMarking
+ℹ [1329/1334] Replayed EssentialMarking
 info: .\.\.\proof\EssentialMarking.lean:116:0: 'ShortTwists.Cylinder.zero_total_of_lift' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: .\.\.\proof\EssentialMarking.lean:117:0: 'ShortTwists.Cylinder.essentialMarked' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: .\.\.\proof\EssentialMarking.lean:118:0: 'ShortTwists.Cylinder.vertex_offset_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [1330/1333] Replayed SearchSemantics
+ℹ [1330/1334] Replayed SearchSemantics
 info: .\.\.\proof\SearchSemantics.lean:65:0: 'FiniteDiagrams.reachable_iff' depends on axioms: [propext, Quot.sound, Classical.choice]
 info: .\.\.\proof\SearchSemantics.lean:137:0: 'ShortTwists.checked_distance' depends on axioms: [propext, Quot.sound, Classical.choice]
-ℹ [1331/1333] Replayed SurfaceExamples
+ℹ [1331/1334] Replayed FillingEuler
+info: .\.\.\proof\FillingEuler.lean:63:0: 'ShortTwists.Filling.terminal_iff_complement' depends on axioms: [propext, Quot.sound, Classical.choice]
+ℹ [1332/1334] Replayed SurfaceExamples
 info: .\.\.\proof\SurfaceExamples.lean:126:0: 'ShortTwists.Examples.fourteenCrossings' depends on axioms: [propext, Quot.sound, Classical.choice]
 info: .\.\.\proof\SurfaceExamples.lean:127:0: 'ShortTwists.Examples.actualCrossings' depends on axioms: [propext, Quot.sound, Classical.choice]
 info: .\.\.\proof\SurfaceExamples.lean:128:0: 'ShortTwists.Examples.end_vertex_is_twist' depends on axioms: [propext, Quot.sound, Classical.choice]
@@ -55,6 +57,11 @@ info: .\.\.\proof\SurfaceExamples.lean:130:0: 'ShortTwists.Examples.fourteen_six
  Quot.sound,
  Classical.choice,
  Lean.ofReduceBool]
-ℹ [1332/1333] Built FillingEuler
-info: .\.\.\proof\FillingEuler.lean:63:0: 'ShortTwists.Filling.terminal_iff_complement' depends on axioms: [propext, Quot.sound, Classical.choice]
+ℹ [1333/1334] Built MinimumExamples
+info: .\.\.\proof\MinimumExamples.lean:60:0: 'ShortTwists.Minimum.three_crossing_faces' depends on axioms: [propext, Quot.sound, Lean.ofReduceBool]
+info: .\.\.\proof\MinimumExamples.lean:61:0: 'ShortTwists.Minimum.five_diagram' depends on axioms: [propext, Quot.sound, Classical.choice, Lean.ofReduceBool]
+info: .\.\.\proof\MinimumExamples.lean:62:0: 'ShortTwists.Minimum.six_diagram' depends on axioms: [propext, Quot.sound, Classical.choice, Lean.ofReduceBool]
+info: .\.\.\proof\MinimumExamples.lean:63:0: 'ShortTwists.Minimum.other_six_diagram' depends on axioms: [propext, Quot.sound, Classical.choice, Lean.ofReduceBool]
+info: .\.\.\proof\MinimumExamples.lean:64:0: 'ShortTwists.Minimum.differing_algebraic_counts' depends on axioms: [propext, Lean.ofReduceBool]
+info: .\.\.\proof\MinimumExamples.lean:65:0: 'ShortTwists.Minimum.six_of_geometry' depends on axioms: [propext, Quot.sound, Classical.choice, Lean.ofReduceBool]
 Build completed successfully.

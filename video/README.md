@@ -1,6 +1,6 @@
 # Six moves on a double torus
 
-This animated companion follows a particular pair of curves from twelve initial crossings through one and two Dehn twists. It then compares every genus-two distance-four starting pair with twelve or thirteen crossings and the fourteen-crossing example that attains six. The seven chapters are embedded in the MP4. English subtitles can be selected in a compatible player. [Watch the film](six-moves.mp4) · [Captions](captions.vtt) · [Spoken script](script.json)
+This animated companion follows a particular pair of curves from twelve initial crossings through one and two Dehn twists. It compares the twelve- and thirteen-crossing starting pairs with the fourteen-crossing example that attains six. The final chapter reconstructs an unrestricted minimizer from six bands and explains why all smaller pairs admit a shortcut. The MP4 has eight chapters and selectable English subtitles. [Watch the film](six-moves.mp4) · [Captions](captions.vtt) · [Spoken script](script.json)
 
 ## Chapters
 
@@ -13,6 +13,7 @@ This animated companion follows a particular pair of curves from twelve initial 
 | 1:43 | Ruling out every five-edge route |
 | 2:23 | The census and the 14-crossing witness |
 | 3:03 | A geodesic of length seven |
+| 3:34 | The unrestricted minimum of 132 crossings |
 
 ## Rebuild the film
 

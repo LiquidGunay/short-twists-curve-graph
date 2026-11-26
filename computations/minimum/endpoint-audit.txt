@@ -1,0 +1,11 @@
+4563 labeled pairings have two ideal vertices. Checked all 1944 orientation-preserving triangle relabelings.
+widths [2, 11, 7, 7, 2, 11], shift 4: 40 intersections, distance 5. Lower-bound calls by edge budget: {4: 1, 3: 30, 2: 180}
+Upper path {"steps": [[0, 0, 0, 1, 1, 0], [0, 0, 0, 1, 1, 0], [0, 0, 0, 0, 1, 1]], "terminal_crossings": 3, "terminal_neighborhood_genus": 1}
+Uniform-bound calls by remaining budget: {4: 1, 3: 80, 2: 2336}
+widths [30, 30, 6, 6, 30, 30], shift 13: 132 intersections, distance 6. Lower-bound calls by edge budget: {5: 1, 4: 80, 3: 2336, 2: 14160}
+Upper path {"steps": [[0, 0, 0, 1, 1, 0], [0, 0, 0, 1, 0, 1], [1, 1, 0, 0, 0, 0], [0, 1, 1, 1, 0, 0]], "terminal_crossings": 5, "terminal_neighborhood_genus": 1}
+Uniform-bound calls by remaining budget: {5: 1, 4: 192, 3: 14712, 2: 429456}
+widths [29, 30, 7, 7, 30, 29], shift 13: 132 intersections, distance 6. Lower-bound calls by edge budget: {5: 1, 4: 80, 3: 2336, 2: 14424}
+Upper path {"steps": [[0, 0, 0, 1, 1, 0], [0, 0, 0, 1, 1, 0], [1, 1, 0, 0, 0, 0], [0, 0, 0, 1, 1, 1]], "terminal_crossings": 1, "terminal_neighborhood_genus": 1}
+Uniform-bound calls by remaining budget: {5: 1, 4: 192, 3: 14712, 2: 429456}
+Absolute algebraic intersections: [0, 96, 48]

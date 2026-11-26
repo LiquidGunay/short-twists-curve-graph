@@ -17,6 +17,10 @@ The twist of the pushed-off curve has one crossing for each ordered choice of a 
 | `actualCrossings` | A bijection from `Fin 196` to all common points. |
 | `signed_words_agree` | Sorting the geometric crossing coordinates reproduces all three sample one-turn words, including the full 196-entry word. This finite comparison uses the native evaluator. |
 
+## Extremal examples with 40 and 132 crossings
+
+Lean regenerates three signed words from six band widths and a cyclic shift, computes their polygonal faces and checks both distance budgets for each. It checks the three-crossing base case and the different signed intersection totals of the two six-distance examples. The declarations `five_of_geometry` and `six_of_geometry` transfer witness decisions to graph distance assuming the geometric interpretation described below. The global lower-bound census runs separately in C++. [Extremal examples](MinimumExamples.lean) · [Minimum-intersection proof](../paper/minimum-six.pdf) · [Census](../computations/minimum/)
+
 ## What still separates the computation from distance six?
 
 In the formal graph, a vertex is an unoriented isotopy class of essential embedded circles. Adjacency means distinct classes have disjoint representatives. Exact distance six requires a six-edge walk and a lower bound on the length of **every** walk. The executable search reproduces a six-edge outcome on the diagram and rejects five. Lean proves its cache and early exit preserve the recursive predicate for every input. The question about a shortcut is whether that recursion examined enough geometric moves. [Curve graph](IsotopyGraph.lean) · [Walks and exact distance](CurveDistance.lean) · [Checker](FiniteDiagrams.lean)

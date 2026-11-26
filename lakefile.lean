@@ -11,4 +11,5 @@ lean_lib ShortTwists where
   srcDir := "proof"
   roots := #[`CurveDistance, `FiniteDiagrams, `IsotopyGraph, `MarkedCylinder,
     `CollarCrossings, `CrossingOrder, `MarkedFamily, `MarkedEmbeddings, `CircleLifts,
-    `EssentialMarking, `SearchSemantics, `FillingEuler, `SmallCensus, `CensusCoverage, `SurfaceExamples]
+    `EssentialMarking, `SearchSemantics, `FillingEuler, `SmallCensus, `CensusCoverage,
+    `SurfaceExamples, `MinimumExamples]
