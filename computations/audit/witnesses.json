@@ -1,0 +1,272 @@
+{
+  "12 seed": {
+    "steps": [
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    "terminal_crossings": 1,
+    "terminal_neighborhood_genus": 1
+  },
+  "12 unit twist": {
+    "steps": [
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    "terminal_crossings": 1,
+    "terminal_neighborhood_genus": 1
+  },
+  "13 seed": {
+    "steps": [
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    "terminal_crossings": 3,
+    "terminal_neighborhood_genus": 1
+  },
+  "13 unit twist": {
+    "steps": [
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "terminal_crossings": 4,
+    "terminal_neighborhood_genus": 1
+  },
+  "14 seed": {
+    "steps": [
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ]
+    ],
+    "terminal_crossings": 1,
+    "terminal_neighborhood_genus": 1
+  },
+  "14 unit twist": {
+    "steps": [
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "terminal_crossings": 1,
+    "terminal_neighborhood_genus": 1
+  },
+  "12 double twist": {
+    "steps": [
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    "terminal_crossings": 1,
+    "terminal_neighborhood_genus": 1
+  },
+  "12 triple twist": {
+    "steps": [
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    "terminal_crossings": 1,
+    "terminal_neighborhood_genus": 1
+  },
+  "four squares, nested unit twists": {
+    "steps": [
+      [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ]
+    ],
+    "terminal_crossings": 1,
+    "terminal_neighborhood_genus": 1
+  }
+}

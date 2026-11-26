@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.olean
+*.ilean
+*.aux
+*.log
+*.out
+.venv/
+.build/
+media/
+speech-cache/
+*.onnx
+voices-*.bin

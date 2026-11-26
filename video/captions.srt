@@ -1,0 +1,311 @@
+1
+00:00:00,320 --> 00:00:03,976
+On a surface with two handles, how far can one
+twist move a loop?
+
+2
+00:00:04,367 --> 00:00:06,033
+A whole loop is one vertex.
+
+3
+00:00:06,203 --> 00:00:09,913
+Two vertices share an edge if their loops can be
+drawn disjointly.
+
+4
+00:00:10,333 --> 00:00:12,517
+Distance counts the fewest of these moves.
+
+5
+00:00:12,687 --> 00:00:14,644
+Drawing six edges leaves a question.
+
+6
+00:00:14,814 --> 00:00:15,915
+Could five have worked?
+
+7
+00:00:16,867 --> 00:00:21,552
+Start with two loops, A and B, that cross twelve
+times and sit four edges apart.
+
+8
+00:00:21,967 --> 00:00:25,350
+To twist A around B, open a thin collar into a
+strip.
+
+9
+00:00:25,520 --> 00:00:27,203
+Its left and right sides match.
+
+10
+00:00:27,600 --> 00:00:30,670
+Keep the bottom still and slide the top one full
+turn.
+
+11
+00:00:30,840 --> 00:00:33,902
+Watch a strand leave on the right and reappear on
+the left.
+
+12
+00:00:34,300 --> 00:00:37,952
+Each of twelve moving strands crosses each of
+twelve fixed strands.
+
+13
+00:00:38,122 --> 00:00:41,053
+One twist gives a hundred and forty-four
+crossings.
+
+14
+00:00:41,223 --> 00:00:42,986
+Two give two hundred and eighty-eight.
+
+15
+00:00:43,400 --> 00:00:47,745
+Mahanta proved that one twist of this particular
+pair gives distance five.
+
+16
+00:00:47,915 --> 00:00:49,382
+What happens at two twists?
+
+17
+00:00:50,333 --> 00:00:53,237
+Take a shortest path of four edges from A to B.
+
+18
+00:00:53,407 --> 00:00:55,509
+Stop one step early, at W.
+
+19
+00:00:55,900 --> 00:00:59,236
+W misses B, so twisting around B fixes W.
+
+20
+00:00:59,633 --> 00:01:03,594
+Copy the first three edges, twist the copy, and
+attach it in reverse.
+
+21
+00:01:03,764 --> 00:01:05,797
+Three edges out, three edges back.
+
+22
+00:01:06,200 --> 00:01:08,239
+This gives six moves to the twisted loop.
+
+23
+00:01:08,409 --> 00:01:11,577
+To prove the distance, we have to rule out every
+shortcut.
+
+24
+00:01:12,533 --> 00:01:13,936
+Try four twists first.
+
+25
+00:01:14,106 --> 00:01:17,678
+Imagine lifting the path into an annular cover
+around B.
+
+26
+00:01:17,848 --> 00:01:21,953
+When every loop crosses B, each edge can advance
+at most one step there.
+
+27
+00:01:22,367 --> 00:01:25,402
+Four twists put the projected ends six steps
+apart.
+
+28
+00:01:25,572 --> 00:01:27,495
+Five edges cannot span that gap.
+
+29
+00:01:27,900 --> 00:01:33,410
+And if the path visits a loop that misses B,
+reaching that loop costs at least three moves
+from either end.
+
+30
+00:01:33,580 --> 00:01:34,464
+Again, six.
+
+31
+00:01:34,867 --> 00:01:36,877
+Now turn the dial down to two twists.
+
+32
+00:01:37,047 --> 00:01:38,848
+The projected gap falls to four.
+
+33
+00:01:39,018 --> 00:01:42,266
+A five-edge shortcut is still possible on this
+evidence.
+
+34
+00:01:43,200 --> 00:01:44,392
+Here is how to finish.
+
+35
+00:01:44,562 --> 00:01:46,566
+Cut along A, and triangulate.
+
+36
+00:01:46,736 --> 00:01:51,469
+The crossing counts on the sides of a triangle
+tell us how the strands connect inside.
+
+37
+00:01:51,867 --> 00:01:55,466
+An efficient-geodesic theorem says that if a
+shortcut exists,
+
+38
+00:01:55,561 --> 00:01:58,210
+a shortest one starts with bounded crossing
+counts.
+
+39
+00:01:58,380 --> 00:01:59,960
+We can test a finite list.
+
+40
+00:02:00,367 --> 00:02:03,520
+For the double twist, there are eighty candidate
+first moves.
+
+41
+00:02:03,690 --> 00:02:07,855
+Following them produces fourteen thousand and
+sixteen terminal tests.
+
+42
+00:02:08,267 --> 00:02:10,937
+Every terminal pair fills the surface with disks.
+
+43
+00:02:11,107 --> 00:02:12,841
+No essential loop misses both.
+
+44
+00:02:13,011 --> 00:02:14,792
+Every proposed shortcut fails.
+
+45
+00:02:15,200 --> 00:02:17,376
+So the answer for this drawing is exact.
+
+46
+00:02:17,546 --> 00:02:18,919
+One twist gives five.
+
+47
+00:02:19,089 --> 00:02:22,535
+Two twists, three twists, and every higher power
+give six.
+
+48
+00:02:23,467 --> 00:02:26,136
+Could a single twist ever get all the way to six?
+
+49
+00:02:26,306 --> 00:02:29,130
+Change the starting pair, but keep its distance
+at four.
+
+50
+00:02:29,533 --> 00:02:32,597
+Twelve crossings is the minimum on the double
+torus.
+
+51
+00:02:32,767 --> 00:02:35,687
+There are five kinds of ordered starting pairs at
+that size.
+
+52
+00:02:35,857 --> 00:02:37,606
+Every one twists to distance five.
+
+53
+00:02:38,000 --> 00:02:40,542
+At thirteen crossings there are eleven kinds.
+
+54
+00:02:40,712 --> 00:02:42,579
+Again, every one twists to five.
+
+55
+00:02:42,749 --> 00:02:46,047
+So a pair can give five without having minimum
+intersection.
+
+56
+00:02:46,467 --> 00:02:49,672
+At fourteen crossings, one pair finally reaches
+six.
+
+57
+00:02:49,842 --> 00:02:53,319
+The two resulting curves cross a hundred and
+ninety-six times.
+
+58
+00:02:53,733 --> 00:02:58,702
+Fourteen is therefore the smallest starting count
+that works for this one-twist construction.
+
+59
+00:02:58,872 --> 00:03:02,426
+The minimum over all distance-six pairs is a
+separate question.
+
+60
+00:03:03,367 --> 00:03:06,947
+Curves at every distance were known long before
+this calculation.
+
+61
+00:03:07,117 --> 00:03:09,171
+Here is how the general idea works.
+
+62
+00:03:09,567 --> 00:03:13,640
+With enough twists, fold a length-four geodesic
+into one of length six.
+
+63
+00:03:13,810 --> 00:03:15,662
+Fold again and its length is ten.
+
+64
+00:03:16,067 --> 00:03:17,880
+Stop seven edges along that path.
+
+65
+00:03:18,050 --> 00:03:20,828
+Any shortcut to that point would shorten the
+whole path.
+
+66
+00:03:20,998 --> 00:03:23,886
+So those two vertices are exactly seven apart.
+
+67
+00:03:24,300 --> 00:03:27,383
+The short-twist result answers a more precise
+question.
+
+68
+00:03:27,553 --> 00:03:29,903
+For Mahanta's drawing, two turns suffice.
+
+69
+00:03:30,073 --> 00:03:33,378
+With the right fourteen-crossing starting pair,
+one turn does it.

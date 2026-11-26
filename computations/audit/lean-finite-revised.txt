@@ -1,0 +1,11 @@
+'FiniteDiagrams.thirteen_seed_faces' depends on axioms: [propext, Lean.ofReduceBool]
+'FiniteDiagrams.thirteen_twist_distance_test' depends on axioms: [propext,
+ Quot.sound,
+ Classical.choice,
+ Lean.ofReduceBool]
+'FiniteDiagrams.fourteen_twist_distance_test' depends on axioms: [propext,
+ Quot.sound,
+ Classical.choice,
+ Lean.ofReduceBool]
+'FiniteDiagrams.nested_unit_distance_test' depends on axioms: [propext, Quot.sound, Classical.choice, Lean.ofReduceBool]
+'FiniteDiagrams.small_seed_unit_tests' depends on axioms: [propext, Quot.sound, Classical.choice, Lean.ofReduceBool]

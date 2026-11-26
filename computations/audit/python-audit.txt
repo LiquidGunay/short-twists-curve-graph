@@ -1,0 +1,9 @@
+Figure 18 seed: 12 intersections, distance 4. Lower-bound calls by edge budget: {3: 1, 2: 6}
+Figure 18, power 1: 144 intersections, distance 5. Lower-bound calls by edge budget: {4: 1, 3: 30, 2: 180}
+Figure 18, power 2: 288 intersections, distance 6. Lower-bound calls by edge budget: {5: 1, 4: 80, 3: 2336, 2: 14016}
+Figure 18, power 3: 432 intersections, distance 6. Lower-bound calls by edge budget: {5: 1, 4: 80, 3: 2336, 2: 14016}
+Thirteen-crossing seed: 13 intersections, distance 4. Lower-bound calls by edge budget: {3: 1, 2: 6}
+Thirteen-crossing seed, one twist: 169 intersections, distance 5. Lower-bound calls by edge budget: {4: 1, 3: 30, 2: 180}
+Fourteen-crossing seed: 14 intersections, distance 4. Lower-bound calls by edge budget: {3: 1, 2: 6}
+Fourteen-crossing seed, one twist: 196 intersections, distance 6. Lower-bound calls by edge budget: {5: 1, 4: 80, 3: 2336, 2: 14016}
+Four squares, nested unit twists: 256 intersections, distance 5. Lower-bound calls by edge budget: {4: 1, 3: 72, 2: 1718}

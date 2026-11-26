@@ -1,0 +1,46 @@
+{
+  "Opening": [
+    ["handles", "On a surface with two handles, how far can one twist move a loop?"],
+    ["edge", "A whole loop is one vertex. Two vertices share an edge if their loops can be drawn disjointly."],
+    ["challenge", "Distance counts the fewest of these moves. Drawing six edges leaves a question. Could five have worked?"]
+  ],
+  "Collar": [
+    ["seed", "Start with two loops, A and B, that cross twelve times and sit four edges apart."],
+    ["strip", "To twist A around B, open a thin collar into a strip. Its left and right sides match."],
+    ["turn", "Keep the bottom still and slide the top one full turn. Watch a strand leave on the right and reappear on the left."],
+    ["products", "Each of twelve moving strands crosses each of twelve fixed strands. One twist gives a hundred and forty-four crossings. Two give two hundred and eighty-eight."],
+    ["mahan", "Mahanta proved that one twist of this particular pair gives distance five. What happens at two twists?"]
+  ],
+  "Fold": [
+    ["walk", "Take a shortest path of four edges from A to B. Stop one step early, at W."],
+    ["pivot", "W misses B, so twisting around B fixes W."],
+    ["reflect", "Copy the first three edges, twist the copy, and attach it in reverse. Three edges out, three edges back."],
+    ["upper", "This gives six moves to the twisted loop. To prove the distance, we have to rule out every shortcut."]
+  ],
+  "Bounds": [
+    ["track", "Try four twists first. Imagine lifting the path into an annular cover around B. When every loop crosses B, each edge can advance at most one step there."],
+    ["six", "Four twists put the projected ends six steps apart. Five edges cannot span that gap."],
+    ["miss", "And if the path visits a loop that misses B, reaching that loop costs at least three moves from either end. Again, six."],
+    ["gap", "Now turn the dial down to two twists. The projected gap falls to four. A five-edge shortcut is still possible on this evidence."]
+  ],
+  "Search": [
+    ["triangle", "Here is how to finish. Cut along A, and triangulate. The crossing counts on the sides of a triangle tell us how the strands connect inside."],
+    ["bounded", "An efficient-geodesic theorem says that if a shortcut exists, a shortest one starts with bounded crossing counts. We can test a finite list."],
+    ["tree", "For the double twist, there are eighty candidate first moves. Following them produces fourteen thousand and sixteen terminal tests."],
+    ["fill", "Every terminal pair fills the surface with disks. No essential loop misses both. Every proposed shortcut fails."],
+    ["spectrum", "So the answer for this drawing is exact. One twist gives five. Two twists, three twists, and every higher power give six."]
+  ],
+  "Census": [
+    ["ask", "Could a single twist ever get all the way to six? Change the starting pair, but keep its distance at four."],
+    ["twelve", "Twelve crossings is the minimum on the double torus. There are five kinds of ordered starting pairs at that size. Every one twists to distance five."],
+    ["thirteen", "At thirteen crossings there are eleven kinds. Again, every one twists to five. So a pair can give five without having minimum intersection."],
+    ["fourteen", "At fourteen crossings, one pair finally reaches six. The two resulting curves cross a hundred and ninety-six times."],
+    ["min", "Fourteen is therefore the smallest starting count that works for this one-twist construction. The minimum over all distance-six pairs is a separate question."]
+  ],
+  "AnyDistance": [
+    ["older", "Curves at every distance were known long before this calculation. Here is how the general idea works."],
+    ["grow", "With enough twists, fold a length-four geodesic into one of length six. Fold again and its length is ten."],
+    ["seven", "Stop seven edges along that path. Any shortcut to that point would shorten the whole path. So those two vertices are exactly seven apart."],
+    ["close", "The short-twist result answers a more precise question. For Mahanta's drawing, two turns suffice. With the right fourteen-crossing starting pair, one turn does it."]
+  ]
+}
