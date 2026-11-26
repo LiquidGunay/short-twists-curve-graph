@@ -24,7 +24,7 @@
 {\LARGE\bfseries Short Dehn twists at distances five and six\\[3pt]
 on the closed genus-two surface\par}
 \vspace{9pt}
-{\small Research manuscript \(\,\cdot\,\) 25 November 2026}
+{\small Research manuscript \(\,\cdot\,\) Revised 26 November 2026}
 \end{center}
 
 \begin{abstract}
@@ -483,47 +483,46 @@ distance-four pair remain separate questions.
 
 \clearpage
 \section{Scope of the formal checks}
-The Lean file \ttcode{CurveDistance.lean} defines walks with their
-length as a type index and defines exact distance by existence and
-minimality. Its theorem \ttcode{fold_exact} takes a fixed vertex, an
-edge-preserving twist, unit edge bounds for the height \(h(x)=d(x,c)\),
-and a coordinate \(p\) with unit edge change when both heights exceed one.
-For the surface application take \(p(x)\) to be the distance from a
-fixed extremal initial arc to a chosen arc of \(\pi_c(x)\), choosing
-the final arc to attain the endpoint diameter. Vertices of height at most
-one can be assigned any \(p\). Induction on an arbitrary walk of length
-\(m\) proves \(p(y)\le p(x)+m\) or \(h(x)+h(y)\le m+2\).
-The file constructs the folded walk and proves it shortest under the
-endpoint gap. It also proves the geodesic-prefix theorem. The theorem
-\ttcode{finite_search_correct} verifies the induction in
-Section~\ref{sec:finite} for an abstract diagram type, given the local
-terminal criterion, legality of first moves, and existence of an
-efficient first neighbor. Lean 4.8.0 accepts all three proofs with its
-standard logical foundations.
+The Lean development constructs both marked curves of the fourteen-crossing
+example on the quotient obtained by gluing a real cylinder. The formal
+distance-six conclusion for these curves still has geometric hypotheses.
 
-\paragraph{Evaluating the concrete examples in Lean.}
-The second file, \ttcode{FiniteDiagrams.lean}, implements the collar
-construction and the bounded search directly from the three signed
-permutations. For the terminal genus it walks the four-valent graph.
-Inside a triangle it computes the next strand from a slot's index
-and the corner count, independently of the slot-matching tables in
-the Python implementation. It generates the weight vectors and both
-possible path bounds without importing the Python results. Both
-implementations agree on all eight inputs in Section~\ref{sec:results},
-the nested unit twist in Section~6, and the reported distances four and
-five for all sixteen signed seeds in Section~\ref{sec:census}. The
-exhaustive generation of the census inputs runs in Python.
-The concrete equalities are checked with \ttcode{native_decide}. Lean's
-printed axiom reports identify the additional evaluator dependency
-\ttcode{Lean.ofReduceBool}. The generic graph theorems use ordinary
-kernel-checked proof terms.
+\paragraph{Marked curves.}
+For a topological space \(X\), a vertex is an essential embedded
+\(\mathbb R/\mathbb Z\) in \(X\), modulo isotopy through embeddings and
+homeomorphic reparametrization. Adjacency means that two distinct classes
+admit disjoint representatives. A signed word specifies how the two boundary
+circles of a cylinder are glued slot by slot. The shear
+\((x,t)\mapsto(x+kt,t)\) descends to a homeomorphism for every integer \(k\).
+The fourteen-crossing curve winds \(4-10=-6\) times under projection to
+the height coordinate modulo one. A null-homotopic circle-valued map lifts
+to the real line, where the changes of height around a closed curve would
+sum to zero. Lean uses this obstruction to prove essentiality. It also proves
+that varying the transverse offset between the two chosen representatives
+gives an isotopy through embeddings.
 
-These checks leave a precise mathematical interface. Identifying signed
-diagrams with their geometric realizations, interpreting the collar as
-a Dehn twist, and supplying the efficient-geodesic and annular projection
-facts are justified in the paper and the cited surface theorems. A full
-formalization of the curve graph of \(S_2\) would also have to prove
-these identifications in Lean.
+\paragraph{The 196 crossings.}
+The declaration \ttcode{actualCrossings} gives a bijection from
+\(\{0,\ldots,195\}\) to the entire intersection set of the marked curve
+and its once-twisted push-off. Each choice of a fixed strand and a moving
+strand specifies one interior crossing. A seam invariant excludes additional
+boundary crossings. Integer height keys recover their traversal order, and the
+resulting 196-entry word agrees with the input to the distance test. The
+bijection concerns these representatives. Minimality over all isotopies
+uses the geometric intersection formula in the paper.
+
+\paragraph{The distance calculation.}
+Lean proves that the cached checker implements the stated recursion
+and reproduces the census in Section~\ref{sec:census} from the side
+pairings, widths and boundary shifts. The large finite equalities use
+\ttcode{native_decide} and its evaluator dependency \ttcode{Lean.ofReduceBool}.
+The crossing bijection and the abstract shortest-path arguments use ordinary
+kernel-checked proofs. To obtain the surface distance in Lean one must still
+identify the quotient with \(S_2\), interpret the diagram test for filling,
+realize candidate neighbors, and show that every sufficiently short path
+has an enumerated first move by the efficient-geodesic theorem \cite{BMM}.
+Surface-level coverage of the census and the annular projection estimate
+for unbounded twist powers are also outside the present formal proof.
 
 \clearpage
 \begin{thebibliography}{99}\small

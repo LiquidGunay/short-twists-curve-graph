@@ -4,7 +4,7 @@
 
 [![Six moves on a double torus. A two-handled surface and the sharp 14-crossing threshold.](video/poster.jpg)](video/six-moves.mp4)
 
-[Watch the narrated film](video/six-moves.mp4) · [Download the MP4](https://github.com/LiquidGunay/short-twists-curve-graph/raw/refs/heads/main/video/six-moves.mp4) · [English captions](video/captions.vtt) · [Animation and narration source](video/)
+[Watch the narrated film](video/six-moves.mp4) · [English captions](video/captions.vtt) · [Animation and narration source](video/)
 
 ## What Mahanta established
 
@@ -53,14 +53,14 @@ python computations/verify_distance_six.py --distance 7
 
 The first command checks the upper and lower distance bounds on the marked examples. The second enumerates all triangle pairings, widths and boundary gluings at the two small intersection counts. The last prints twist words for a pair at any requested nonnegative distance on the same surface. The audit directory contains run transcripts, all sixteen census representatives and the normal-coordinate witnesses. [Verification transcripts](computations/audit/)
 
-With Lean **4.8.0** installed, run the following from the root. The supplied toolchain pin works with Elan.
+The Lean package pins Lean **4.8.0** and mathlib **v4.8.0**. From the repository root, run
 
 ~~~sh
-lean proof/CurveDistance.lean
-lean proof/FiniteDiagrams.lean
+lake exe cache get
+lake build
 ~~~
 
-The first file checks the abstract shortest-path arguments in the Lean kernel. The second independently computes the marked distances and checks the sixteen census representatives with Lean's native evaluator. Python generates the exhaustive list. The surface interpretation, the efficient-geodesic theorem and the annular projection argument are justified in the manuscript. [Abstract Lean proofs](proof/CurveDistance.lean) · [Finite Lean checks](proof/FiniteDiagrams.lean)
+Lean constructs the two marked essential embedded circles on a compact quotient of the real cylinder. It proves that the second represents the once-twisted first curve and that the specified representatives meet in exactly **196 points**. Lean also independently regenerates the 12- and 13-crossing census. The distance-six declaration takes explicit hypotheses about how the search represents curves and captures all short paths. The formal identification of the quotient with the double torus and the proof of those hypotheses remain open. [Formal results and open obligations](proof/README.md) · [Named examples](proof/SurfaceExamples.lean) · [Library and source audit](proof/library-audit.md)
 
 ## Inside the film
 

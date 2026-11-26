@@ -205,32 +205,50 @@ def neighbor (tr : Triangulation) (route : Route) : Code := Id.run do
   let ordered := hits.qsort (fun a b => a.1<b.1 || (a.1==b.1 && a.2.1<b.2.1))
   return ordered.map (fun a => a.2.2)
 
-/-- Test distance at most extra+2. The cache depends only on paired sides and
-    the coordinate bound. It does not contain any answers for curve pairs. -/
-abbrev RouteCache := Lean.HashMap (List Nat × Nat) (Array Route)
-def reachable (extra : Nat) (s : Code) : StateM RouteCache Bool := do
-  if s.isEmpty then return true
-  if 2+s.size < (originalFaces s).size + 4 then return true
-  match extra with
-  | 0 => return false
-  | k+1 =>
-    let tr := triangulate (cutFaces s) s.size
-    let bound := k+1+(if tr.bands.any Array.isEmpty then 1 else 0)
-    let key := (tr.opp.toList,bound)
-    let cache ← get
-    let rs ← match cache.find? key with
-      | some a => pure a
-      | none => do
-        let a := routes tr.opp bound
-        modify (fun c => c.insert key a)
-        pure a
-    for r in rs do
-      if ← reachable k (neighbor tr r) then return true
-    return false
+/-- A cached row records its input and a proof of its value. Proofs are erased
+    by the evaluator. Even an arbitrary initial cache is safe to use. -/
+structure CachedRoutes where
+  opp : Array Nat
+  bound : Nat
+  value : Array Route
+  correct : value = routes opp bound
 
-def exactTest (s : Code) (d : Nat) : Bool := (do
-  if ← reachable (d-3) s then return false
-  reachable (d-2) s : StateM RouteCache Bool).run' {}
+abbrev RouteCache := Lean.HashMap (List Nat × Nat) CachedRoutes
+
+def getRoutes (opp : Array Nat) (bound : Nat) (cache : RouteCache) :
+    {rs : Array Route // rs = routes opp bound} × RouteCache := Id.run do
+  let key := (opp.toList,bound)
+  if let some row := cache.find? key then
+    if same : row.opp = opp ∧ row.bound = bound then
+      return (⟨row.value, by rw [row.correct,same.1,same.2]⟩,cache)
+  let rs := routes opp bound
+  return (⟨rs,rfl⟩, cache.insert key ⟨opp,bound,rs,rfl⟩)
+
+def terminal (s : Code) : Bool :=
+  s.isEmpty || decide (2+s.size < (originalFaces s).size+4)
+
+def coordinateBound (tr : Triangulation) (k : Nat) : Nat :=
+  k+1+(if tr.bands.any Array.isEmpty then 1 else 0)
+
+def visit {α σ : Type} (test : α → σ → Bool × σ) : List α → σ → Bool × σ
+  | [], cache => (false,cache)
+  | r :: rs, cache =>
+    let (found,next) := test r cache
+    if found then (true,next) else visit test rs next
+
+/-- Test distance at most extra+2. Every cache hit returns the actual row
+    computed by routes; no cache stores answers for curve pairs. -/
+def reachable : Nat → Code → StateM RouteCache Bool
+  | 0, s => fun cache => (terminal s,cache)
+  | k+1, s => fun cache =>
+    if terminal s then (true,cache) else
+      let tr := triangulate (cutFaces s) s.size
+      let (row,next) := getRoutes tr.opp (coordinateBound tr k) cache
+      visit (fun r => reachable k (neighbor tr r)) row.val.toList next
+
+def exactTest (s : Code) (d : Nat) : Bool :=
+  let (shorter,cache) := (reachable (d-3) s).run {}
+  if shorter then false else ((reachable (d-2) s).run cache).1
 
 def faceProfile (s : Code) : Nat × Nat × Nat :=
   let faces := originalFaces s

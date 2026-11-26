@@ -7,6 +7,7 @@ __pycache__/
 *.out
 .venv/
 .build/
+.lake/
 media/
 speech-cache/
 *.onnx
